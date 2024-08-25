@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rocket Animation</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: skyblue;
+            overflow: hidden; /* Ensure rocket animation is visible */
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .rocket {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: url('https://www.shutterstock.com/shutterstock/videos/1042220779/thumb/1.jpg?ip=x480') no-repeat center center;
+            background-size: cover;
+            bottom: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: transform 2s ease-out;
+            filter: drop-shadow(1px 1px 20px b);
+            clip-path: ellipse(25% 50% at 45% 50%);
+        }
+
+        .gear-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: Arial, sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            color: #fff;
+            cursor: pointer;
+            padding: 10px 20px;
+            background: #333;
+            border-radius: 5px;
+        }
+
+        .fly-away {
+            transform: translateX(-50%) translateY(-100vh) scale(0.5);
+        }
+        @media only screen and (max-width: 768px) {
+    .rocket {
+      width: 150px;
+      height: 150px;
+      bottom: -30px;
+    }
+    .gear-text {
+      font-size: 16px;
+      padding: 5px 10px;
+    }
+    .container {
+      padding: 20px;
+    }
+  }
+    </style>
+</head>
+<body>
+   
+    <div class="container">
+        <br><br><br><br><br><br><hr>
+       <center> <h3>
+            Merko pta ha tu ab same feel nhi krti pehle jese but koi na 🥹 <br>tu meri kismt m ni thi
+            tu achi h bhot   niche click kar
+            
+        </h3></center>
+        <div class="rocket"></div>
+        <div class="gear-text" onclick="flyRocket()"> Flying Gear</div>
+    </div>
+
+    <script>
+        function flyRocket() {
+            document.querySelector('.rocket').classList.add('fly-away');
+        }
+    </script>
+</body>
+</html>
